@@ -1,4 +1,4 @@
-#cq5-dialog-listerens-reusage
+#cq5-dialog-listeners-reusage
 This example show how to reuse dialog listeners in several cq dialogs instead of writing the same code many times. This could be very useful considering the posibilities of changes, code refactor, etc.
 
 ##Listener definition
