@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!-- We should define each listener as an unstructured jcr node containing  -->
+<!-- each event and the corresponding handler.  -->
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"	
+    beforesubmit="function(dialog){	return cqJs.dialog('validate' , dialog); }"
+    loadcontent="function(dialog){	return cqJs.dialog('setup' , dialog); }" >    
+</jcr:root>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root 
+	xmlns:cq="http://www.day.com/jcr/cq/1.0" 
+	xmlns:jcr="http://www.jcp.org/jcr/1.0"
+	xmlns:nt="http://www.jcp.org/jcr/nt/1.0"	
+	jcr:primaryType="cq:Dialog" 
+	height="400"
+	stateful="false"
+	xtype="dialog">
+	
+	<!-- This is the key code portion that let us reuse dialog listeners -->
+	<!-- In a few words, we define a partial component (listeners) and we define all listeners -->
+	<!-- we want to register in several dialog. This provides us a way to reuse and unify listeners. -->
+    <listeners
+	    jcr:primaryType="nt:unstructured"
+	  	path="/apps/cq-tips/components/form/listeners/fields_validation.infinity.json"
+	    xtype="cqinclude"/>
+	
+	<items jcr:primaryType="cq:WidgetCollection">
+		<tabs jcr:primaryType="cq:TabPanel">
+			<items jcr:primaryType="cq:WidgetCollection">	
+        		<mainTab 
+        			jcr:primaryType="cq:Panel"
+        			title="Some Nice Component">
+        			<items jcr:primaryType="cq:WidgetCollection">	
+						
+						<tfOne
+							jcr:primaryType="cq:Widget" 
+							fieldLabel="Textfield One" 
+							name="./textFieldOne"
+							xtype="textfield" 
+							defaultValue="defaultvalue" />
+						<mfOne 
+							jcr:primaryType="cq:Widget" 
+							fieldLabel="Multifield One"
+							name="./multifieldOne"
+							cls="required"
+							xtype="multifield" />
+						<mfTwo 
+							jcr:primaryType="cq:Widget" 
+							fieldLabel="Multifield Two"
+							name="./multifieldTwo" 
+							xtype="multifield" />	
+						<tfTwo 
+							jcr:primaryType="cq:Widget" 
+							fieldLabel="Textfield Two"
+							name="./textFieldOne"
+							allowBlank="false"
+							cls="required"
+							validator="function(value) { return cqJs.validate('notEmpty' , value); }"
+							xtype="textfield" />	
+									
+					</items>
+				</mainTab>
+			</items>
+		</tabs>
+	</items>
+</jcr:root>
+
